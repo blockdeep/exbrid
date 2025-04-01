@@ -1,10 +1,18 @@
 # 🧪 Exbrid
 
-This is an **experiment** exploring an alternate approach to bridging Ethereum and Polkadot ecosystems by embedding a **Polkadot light client (Smoldot)** directly inside an **Ethereum node (Reth)** using its plugin system **ExEx**.
+Exbrid is an **experiment** exploring an alternate approach to message passing between Ethereum and Polkadot by embedding a **Polkadot light client (Smoldot)** directly inside an **Ethereum node (Reth)** using its plugin system **ExEx**.
 
 Instead of relying on separate off-chain relayers, this prototype shows how finalized Ethereum block information can be captured from within the Ethereum node itself and submitted directly to a Polkadot-based Substrate chain (like [Paseo](https://github.com/paritytech/polkadot-sdk)) using [Subxt](https://github.com/paritytech/subxt), with Smoldot as the embedded client.
 
+## Initial Research
+
 > ❗ **Disclaimer:** This is an early-stage prototype for research and exploration purposes only. It is not intended for production or secure cross-chain message passing.
+
+The following questions are yet to be answered before it can be used safely:
+
+* How will the Substrate/Polkadot runtime know that the message containing the finalized hash is actually correct?
+* Can we get around the fact that two sides need to run an onchain light client of one another?
+* Maybe other security or trust assumptions that we must validate. TBD.
 
 ---
 
